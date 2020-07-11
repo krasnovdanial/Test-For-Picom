@@ -1,0 +1,439 @@
+@import 'global'
+@import 'variables'
+
+.main
+    display: flex
+    justify-content: space-between
+    max-width: 1820px
+    margin: 0 auto
+ 
+.main__title-head
+    position: relative
+    left: 12em
+    top: 15em
+    max-width: 162px
+    max-height: 48px
+
+.main__logo
+    width: 162px
+    height: 48px
+
+.main__form
+    margin: 4em 12em 0 0
+    width: 400px
+    height: 540px
+    background: $colorWhite
+    box-shadow: 0px 4px 20px rgba(40, 40, 40, 0.2)
+    border-radius: 4px
+
+.main__form-container
+    padding: 25px 35px 0 35px
+
+.main__form-link
+    font-weight: normal
+    font-size: 16px
+    line-height: 24px
+    color: $colorRed
+    border: 0
+    background-color: $colorWhite
+    cursor: pointer
+    outline: none
+    padding: 0 0 0 8px
+
+.main__form-logo
+    display: none
+    
+.main__form-title
+    font-weight: 500
+    font-size: 27px
+    line-height: 40px
+    letter-spacing: 0.01em
+    color: #282828
+    max-width: 380px
+    margin-bottom: -10px
+
+.main__form-question
+    font-weight: normal
+    font-size: 12px
+    line-height: 24px
+    color: #686868
+    padding: 0 0 16px 0
+
+.main__form-inputs
+    display: flex
+    flex-direction: column
+
+.form-group
+    transition: all .3s
+
+.main__form-input
+    box-shadow: none
+    border-radius: 0
+    width: 100%
+    height: 46px
+    transition: all .5s
+    background: $colorWhite
+    padding: 15px 0 8px 16px
+    border: 1px solid #EDEEF0
+    border-radius: 2px
+    &::-moz-selection 
+        background: $backNone
+    &::-webkit-selection 
+        background: $backNone
+    &::selection 
+        background: $backNone
+    &::placeholder
+        color: transparent
+        font-size: 14px !important
+    &:focus
+        box-shadow: none
+        outline: none
+        border-style: none none solid none
+    &:hover
+        background: rgba(237, 238, 240, 0.1)
+    &:focus + .form-label,
+    &:not(:placeholder-shown) + .form-label
+        font-size: 14px
+        transform: translateY(-4.0em)
+
+.form-label
+    color:  #686868
+    display: inline-flex
+    opacity: 1
+    transform: translateY(-2.2em)
+    transform-origin: 0 0
+    transition: all .3s
+    font-size: 16px
+    line-height: 24px
+    font-weight: normal
+    padding: 0 0 0 0
+    margin: 0 0 0 16px
+    background: $colorWhite
+    &::-moz-selection 
+        background: $backNone
+    &::-webkit-selection 
+        background: $backNone
+    &::selection 
+        background: $backNone       
+
+.main__form-check
+    display: flex
+
+.form-check
+    position: absolute
+    z-index: -1
+    opacity: 0
+    &+label
+        display: block
+        align-items: center
+        user-select: none
+    &+label::before 
+        content: ''
+        display: inline-flex
+        width: 1.2em
+        height: 1.2em
+        flex-shrink: 0
+        flex-grow: 0
+        border: 1px solid #EDEEF0
+        border-radius: 2px
+        margin: 0 11px 0 0
+        background-repeat: no-repeat
+        background-position: center center
+        background-size: 83% 100%
+    &:checked+label::before 
+        background-image: url("../images/jackdaw.svg")
+    &:not(:checked)+label:hover::before 
+        border: 1px solid $colorRed
+    &:active+label::before 
+        border: 1px solid $colorRed
+    &:focus+label::before 
+        border: 1px solid $colorRed
+
+.main__form-agree
+    font-weight: normal
+    font-size: 13px
+    line-height: 24px
+    color: #686868
+    margin: -4px 0 0 0px
+    cursor: pointer
+    &::-moz-selection 
+        background: $colorWhite
+    &::-webkit-selection 
+        background: $colorWhite
+    &::selection 
+        background: $colorWhite
+
+.main__form-agreement
+    color: $colorRed
+    &::-moz-selection 
+        background: $colorWhite
+    &::-webkit-selection 
+        background: $colorWhite
+    &::selection 
+        background: $colorWhite
+
+.main__form-line
+    width: 100%
+    height: 1px
+    background: #EDEEF0
+    margin: 20px 0 0 0
+    
+.form-check__button
+    margin: 20px 0 0 107px
+    border: 0
+    width: 223px
+    height: 48px
+    cursor: pointer
+    font-weight: 500
+    font-size: 14px
+    line-height: 20px
+    text-align: center
+    letter-spacing: 0.02em
+    color: $colorWhite
+    background: $colorRed
+    border-radius: 2px
+    outline: none
+    transition: all .3s ease-out
+    &::-moz-selection 
+        background: $backNone
+    &::-webkit-selection 
+        background: $backNone
+    &::selection 
+        background: $backNone
+    &:hover
+        background: linear-gradient(0deg, rgba(40, 40, 40, 0.1), rgba(40, 40, 40, 0.1)), $colorRed
+    &:active
+        background: linear-gradient(0deg, rgba(40, 40, 40, 0.1), rgba(40, 40, 40, 0.1)), $colorRed
+    &:focus
+        background: linear-gradient(0deg, rgba(40, 40, 40, 0.1), rgba(40, 40, 40, 0.1)), $colorRed
+
+.form-input
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.form-input__link
+    font-weight: normal
+    font-size: 16px
+    line-height: 24px
+    color: $colorRed
+
+.form-input__button
+    border: 0
+    width: 150px
+    height: 48px
+    cursor: pointer
+    font-weight: 500
+    font-size: 14px
+    line-height: 20px
+    text-align: center
+    letter-spacing: 0.02em
+    color: $colorWhite
+    background: $colorRed
+    border-radius: 2px
+    &::-moz-selection 
+        background: $backNone
+    &::-webkit-selection 
+        background: $backNone
+    &::selection 
+        background: $backNone
+    &:hover
+        background: linear-gradient(0deg, rgba(40, 40, 40, 0.1), rgba(40, 40, 40, 0.1)), $colorRed
+    &:active
+        background: linear-gradient(0deg, rgba(40, 40, 40, 0.1), rgba(40, 40, 40, 0.1)), $colorRed
+    &:focus
+        background: linear-gradient(0deg, rgba(40, 40, 40, 0.1), rgba(40, 40, 40, 0.1)), $colorRed
+
+
+.form__info
+    text-align: center
+    font-weight: normal
+    font-size: 14px
+    line-height: 20px
+    color: #686868
+
+.form__socials
+    display: flex
+    flex-direction: column
+    text-align: center
+    
+
+.form__socials-link
+    background: #597DA3
+    border-radius: 2px
+    width: 100%
+    height: 48px
+    font-style: normal
+    font-weight: 500
+    font-size: 14px
+    line-height: 20px
+    letter-spacing: 0.02em
+    color: $colorWhite
+    display: flex
+    flex-direction: row-reverse
+    justify-content: center
+    padding: 15px 0 0 0
+    &::-moz-selection 
+        background: $backNone
+    &::-webkit-selection 
+        background: $backNone
+    &::selection 
+        background: $backNone
+    &:hover
+        background: linear-gradient(0deg, rgba(40, 40, 40, 0.1), rgba(40, 40, 40, 0.1)), #597DA3
+    &:nth-child(2)
+        margin: 16px 0 0 0
+        background: #3B5998
+        &:hover
+            background: linear-gradient(0deg, rgba(40, 40, 40, 0.1), rgba(40, 40, 40, 0.1)), #3B5998
+.fa-vk
+    font-size: 20px
+    padding: 0 10px 0 0
+
+.fa-facebook-f
+    font-size: 20px
+    padding: 0 11px 0 0
+
+.form-group 
+	position: relative
+
+
+.disabled
+    background: #EDEEF0
+    font-weight: 500
+    font-size: 14px
+    line-height: 20px
+    text-align: center
+    letter-spacing: 0.02em
+    color: #686868
+    &:hover
+        background: #EDEEF0
+        font-weight: 500
+        font-size: 14px
+        line-height: 20px
+        text-align: center
+        letter-spacing: 0.02em
+        color: #686868
+        cursor: default
+
+
+@media ( max-width: 6000px )
+    .main__form
+        height: 700px 
+    
+@media ( max-width: 4200px)
+    .main__title-head
+        width: 162px
+        height: 48px
+        position: relative
+        left: 327px  
+        top: 300px  
+    .main__form
+        height: 729px 
+        width: 516px
+        margin: 94px 432px 0 0
+    .main__form-title
+        padding: 51px 0 0 12px
+        font-size: 32px
+        white-space: nowrap
+        margin: 0
+    .main__form-question    
+        padding: 0 0 30px 12px
+        font-size: 16px
+    .main__form-input    
+        height: 56px
+    .main__form-agree
+        font-size: 16px
+        line-height: 24px
+        max-width: 387px
+    .form-check__button
+        width: 223px
+        margin: 10px 47px 57px 206px
+    .form-input__button
+        width: 198px
+    .main__form-line
+        margin: 40px 0 34px 0
+    .form__info
+        margin: 0 0 34px 0
+    .form-input
+        margin: 20px 0 0 0
+    .form-group
+        margin: 0 0 12px 0
+
+@media (max-width: 1800px) 
+    .main__title-head
+        position: relative
+        left: 327px  
+        top: 300px  
+        max-width: 162px
+        max-height: 48px  
+    .main__form
+        margin: 94px 432px 0 0
+        width: 400px
+        height: 540px
+    .main__form-title
+        padding: 15px 0 0 0
+        font-size: 27px
+        max-width: 380px
+        margin-bottom: -10px
+    .main__form-question    
+        font-size: 12px
+        padding: 0 0 16px 0
+    .main__form-input    
+        height: 46px
+    .main__form-agree
+        font-size: 13px
+        line-height: 24px
+    .form-check__button
+        margin: 20px 0 0 107px
+        width: 223px
+    .form-input__button
+        width: 150px
+    .main__form-line
+        margin: 20px 0 0 0
+    .form__info
+        margin: 15px 0 15px 0
+    .form-input
+        margin: 10px 0 0 0
+    .form-group
+        margin: 0
+
+@media (max-width: 1370px)
+    .main__title-head
+        position: relative
+        left: 12em
+        top: 15em
+        max-width: 162px
+        max-height: 48px  
+    .main__form
+        margin: 4em 12em 0 0
+        width: 400px
+        height: 540px
+@media (max-width: 1154px) 
+    .main__title
+        display: none
+    .main__form
+        margin: 2em auto !important
+        height: 550px !important
+        margin: 0 auto
+    .main__form-logo
+        display: block !important
+        width: 80px
+        height: 20px
+        margin: -10px 0 0 245px
+
+@media ( max-width: 400px )
+    .main__form
+        height: 620px !important
+        width: 320px
+    .form-check__button
+        width: 130px
+        margin: 30px 0 0 110px
+    .main__form-logo
+        margin: -10px 0 0 160px
+    .main__form-title
+        text-align: center
+        font-size: 23px
+    .main__form-link
+        display: block
+        padding: 0 15px 0 0
